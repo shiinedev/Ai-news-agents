@@ -13,6 +13,21 @@ type SentimentsCardProps = {
 
 
 export default function SentimentCard({ sentiments }: SentimentsCardProps) {
+
+    
+    if (!sentiments || sentiments.length === 0) {
+        return (
+            <Card>
+                <CardHeader>
+                    <CardTitle>Sentiments</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p className="text-sm text-gray-500">No Sentiments Not Found</p>
+                </CardContent>
+            </Card>
+        );
+    }
+
     return (
         <Card>
             <CardHeader>

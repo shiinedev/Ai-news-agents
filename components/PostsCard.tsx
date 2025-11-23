@@ -14,6 +14,21 @@ type Post = {
   };
 
 const PostsCard = ({posts}: PostsCardProps) => {
+
+  
+  if (!posts || posts.length === 0) {
+    return (
+        <Card>
+            <CardHeader>
+                <CardTitle>Posts</CardTitle>
+            </CardHeader>
+            <CardContent>
+                <p className="text-sm text-gray-500">No posts generated yet</p>
+            </CardContent>
+        </Card>
+    );
+}
+
   return (
     <Card>
     <CardHeader>

@@ -16,6 +16,21 @@ type Article = {
 
 
 const ArticleCard = ({articles}: ArticlesCardProps) => {
+
+  
+  if (!articles || articles.length === 0) {
+    return (
+        <Card>
+            <CardHeader>
+                <CardTitle>Articles</CardTitle>
+            </CardHeader>
+            <CardContent>
+                <p className="text-sm text-gray-500">No Articles Found</p>
+            </CardContent>
+        </Card>
+    );
+}
+
   return (
    
 

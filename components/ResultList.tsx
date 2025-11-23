@@ -32,6 +32,49 @@ const ResultList = () => {
 
 
   const results = data?.results || []
+
+
+
+  if(isLoading){
+    return(
+        <div className="space-y-3 max-h-96 overflow-auto">
+        {[...Array(3)].map((_, i) => (
+          <div
+            key={i}
+            className="border p-3 rounded flex gap-3 animate-pulse bg-gray-50"
+          >
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center justify-between">
+                <div className="h-4 w-40 bg-gray-300 rounded"></div>
+      
+                <div className="h-5 w-20 bg-gray-300 rounded"></div>
+              </div>
+      
+              <div className="mt-2 space-y-2">
+                <div className="h-3 w-full bg-gray-300 rounded"></div>
+                <div className="h-3 w-3/4 bg-gray-300 rounded"></div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+    )
+  }
+  
+  if (!results || results.length === 0) {
+    return (
+        <Card>
+            <CardHeader>
+                <CardTitle>Results</CardTitle>
+            </CardHeader>
+            <CardContent>
+                <p className="text-sm text-gray-500">No Results Found</p>
+            </CardContent>
+        </Card>
+    );
+}
+
  
 
   return (
